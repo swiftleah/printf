@@ -16,19 +16,20 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					count += handle_c(args);
+					 handle_c(args);
 					break;
 				case 's':
-					count += handle_s(args);
+					handle_s(args);
 					break;
 				case '%':
-					putchar('%');
-					count++;
+					handle_percent();
+					break;
+				case 'u':
+					handle_u(args);
 					break;
 				default:
 					putchar('%');
 					putchar(*format);
-					count += 2;
 					break;
 			}
 		}
