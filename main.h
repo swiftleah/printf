@@ -11,6 +11,7 @@
 /* Prototypes: */
 
 int _printf(const char *format, ...);
+int handle_c(va_list args);
 
 
 #endif
