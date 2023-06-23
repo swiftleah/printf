@@ -2,9 +2,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0;
 	int count = 0;
-	char *str;
 	va_list args;
 
 	va_start(args, format);
@@ -20,15 +19,7 @@ int _printf(const char *format, ...)
 					count += handle_c(args);
 					break;
 				case 's':
-					{
-						str = va_arg(args, char *);
-						while (str[j] != '\0')
-						{
-							putchar(str[j]);
-							count++;
-							j++;
-						}
-					}
+					count += handle_s(args);
 					break;
 				case '%':
 					putchar('%');

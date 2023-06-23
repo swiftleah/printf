@@ -12,6 +12,7 @@
 
 int _printf(const char *format, ...);
 int handle_c(va_list args);
+int handle_s(va_list args);
 
 
 #endif
