@@ -25,7 +25,9 @@ int _printf(const char *format, ...)
 					handle_percent();
 					break;
 				case 'u':
-					handle_u(args);
+					break;
+				case 'i':
+				case 'd':
 					break;
 				default:
 					putchar('%');

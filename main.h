@@ -14,6 +14,5 @@ int _printf(const char *format, ...);
 int handle_c(va_list args);
 int handle_s(va_list args);
 void handle_percent(void);
-int handle_u(va_list args);
 
 #endif
