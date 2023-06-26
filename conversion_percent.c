@@ -6,7 +6,8 @@
  * Return: nothing
  */
 
-void handle_percent(void)
+void handle_percent(int *count)
 {
 	putchar('%');
+	(*count)++;
 }

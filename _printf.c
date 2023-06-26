@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * _printf - handles different cases for specifiers
+ * @format: char pointer
+ *
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -16,22 +21,18 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					 handle_c(args);
+					 count += handle_c(args, count);
 					break;
 				case 's':
-					handle_s(args);
+					count += handle_s(args, count);
 					break;
 				case '%':
-					handle_percent();
-					break;
-				case 'u':
-					break;
-				case 'i':
-				case 'd':
+					handle_percent(&count);
 					break;
 				default:
 					putchar('%');
 					putchar(*format);
+					count += 2;
 					break;
 			}
 		}
