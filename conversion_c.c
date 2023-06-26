@@ -7,10 +7,8 @@
  * Return: count
  */
 
-int handle_c(va_list args, int count)
+void handle_c(va_list args, int *count)
 {
 	putchar(va_arg(args, int));
-	count++;
-
-	return (count);
+	(*count)++;
 }

@@ -21,10 +21,10 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					 count += handle_c(args, count);
+					 handle_c(args, &count);
 					break;
 				case 's':
-					count += handle_s(args, count);
+					handle_s(args, &count);
 					break;
 				case '%':
 					handle_percent(&count);

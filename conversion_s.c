@@ -7,7 +7,7 @@
  * Return: string
  */
 
-int handle_s(va_list args, int count)
+void handle_s(va_list args, int *count)
 {
 	int j = 0;
 	char *str;
@@ -17,8 +17,7 @@ int handle_s(va_list args, int count)
 		{
 			putchar(str[j]);
 			j++;
-			count++;
+			(*count)++;
 		}
-	return (count);
 }
 
