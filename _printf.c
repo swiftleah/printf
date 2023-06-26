@@ -29,14 +29,12 @@ int _printf(const char *format, ...)
 				case '%':
 					handle_percent(&count);
 					break;
-<<<<<<< HEAD
 				case 'b':
-					handle_binery(&count);
-=======
+					handle_b(args, &count);
+					break;
 				case 'i':
 				case 'd':
 					handle_d(args, &count);
->>>>>>> 4c4f181797f999dda4896ee18282984e72c41a56
 					break;
 				default:
 					putchar('%');
