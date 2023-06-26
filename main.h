@@ -14,5 +14,6 @@ int _printf(const char *format, ...);
 void handle_c(va_list args, int *count);
 void handle_s(va_list args, int *count);
 void handle_percent(int *count);
+void printBinary(unsigned int b)
 
 #endif

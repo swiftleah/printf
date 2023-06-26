@@ -29,6 +29,9 @@ int _printf(const char *format, ...)
 				case '%':
 					handle_percent(&count);
 					break;
+				case 'b':
+					handle_binery(&count);
+					break;
 				default:
 					putchar('%');
 					putchar(*format);
