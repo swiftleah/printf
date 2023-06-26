@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * handle_d - handles conversion specifiers d and i
+ * @args: arguments
+ * @count: number of charaters printed
+ * Return: count
+ */
 int handle_d(va_list args, int *count)
 {
 	int num = va_arg(args, int);
@@ -12,7 +17,6 @@ int handle_d(va_list args, int *count)
 		return (1);
 	}
 	temp = num;
-
 	if (num < 0)
 	{
 		putchar('-');
@@ -20,20 +24,17 @@ int handle_d(va_list args, int *count)
 		num = -num;
 		temp = -temp;
 	}
-
 	while (temp != 0)
 	{
 		temp /= 10;
 		digits++;
 	}
-
 	mult = 1;
 	while (digits > 1)
 	{
 		mult *= 10;
 		digits--;
 	}
-
 	while (mult > 0)
 	{
 		digit = num / mult;
