@@ -3,7 +3,7 @@
 /**
  * handle_s - handles conversion specifier 's'
  * @args: arguments
- *
+ * @count: number of characters printed
  * Return: string
  */
 

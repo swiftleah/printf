@@ -3,7 +3,7 @@
 /**
  * handle_c - handles the 'c' conversion specifier
  * @args: arguments
- *
+ * @count: number of characters printed
  * Return: count
  */
 

@@ -2,7 +2,7 @@
 
 /**
  * handle_percent - handles conversion specifier for '%'
- *
+ * @count: number of chcracters printed
  * Return: nothing
  */
 
