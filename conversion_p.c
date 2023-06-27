@@ -19,18 +19,3 @@ int handle_p(va_list args, int *count) {
         return -1
     }
 }
-
-int main() 
-{
-    int result = register_printf_function('p', handle_p);
-    if (result == -1) 
-    {
-        fprintf(stderr, "Failed to register conversion specifier '%p'\n");
-        return 1
-    }
-
-    void *ptr = NULL;
-    printf("Pointer address: %p\n", ptr);
-
-    return 0;
-}
