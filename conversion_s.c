@@ -12,6 +12,10 @@ void handle_s(va_list args, int *count)
 	int j = 0;
 	char *str;
 
+	if (args == NULL)
+	{
+		return;
+	}
 	str = va_arg(args, char *);
 		while (str[j] != '\0')
 		{
