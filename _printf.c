@@ -53,9 +53,6 @@ int _printf(const char *format, ...)
 				case 'o':
 					handle_o(args, &count);
 					break;
-				case 'p':
-					handle_p(args, &count);
-					break;
 				default:
 					write(1, "%", 1);
 					write(1, format, 1);
@@ -73,3 +70,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
