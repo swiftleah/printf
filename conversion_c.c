@@ -9,6 +9,10 @@
 
 void handle_c(va_list args, int *count)
 {
+	if (args == NULL)
+	{
+		return;
+	}
 	putchar(va_arg(args, int));
 	(*count)++;
 }
