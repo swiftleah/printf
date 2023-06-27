@@ -10,6 +10,10 @@ int handle_d(va_list args, int *count)
 	int num = va_arg(args, int);
 	int temp, digit, mult = 1, digits = 0;
 
+	if (args == NULL)
+	{
+		return (-1);
+	}
 	if (num == 0)
 	{
 		putchar('0');
