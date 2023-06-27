@@ -36,6 +36,9 @@ int _printf(const char *format, ...)
 				case 'd':
 					handle_d(args, &count);
 					break;
+				case 'r':
+					handle_r(args, &count);
+					break;
 				default:
 					putchar('%');
 					putchar(*format);
