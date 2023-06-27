@@ -6,6 +6,10 @@ int handle_b(va_list args, int *count)
 	int bit, mult, digits = 0;
 	unsigned int temp;
 
+	if (args == NULL)
+	{
+		return (-1);
+	}
 	if (n == 0)
 	{
 		putchar('0');
