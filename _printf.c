@@ -17,7 +17,6 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-
 	while (format[i] != '\0')
 	{
 		if (*format == '%')
@@ -55,6 +54,9 @@ int _printf(const char *format, ...)
 					break;
 				case 'u':
 					handle_u(args, &count);
+					break;
+				case 'S':
+					handle_S(args, &count);
 					break;
 				default:
 					write(1, "%", 1);
