@@ -109,7 +109,6 @@ int handle_X(va_list args, int *count)
 		write(1, &buffer[j], 1);
 		(*count)++;
 	}
-	free(buffer);
 	return (*count);
 }
 

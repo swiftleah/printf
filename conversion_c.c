@@ -15,7 +15,7 @@ void handle_c(va_list args, int *count)
 	{
 		return;
 	}
-	c = (va_arg(args, int));
+	c = (char)(va_arg(args, int));
 	write(1, &c, 1);
 	(*count)++;
 }

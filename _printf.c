@@ -54,15 +54,15 @@ int _printf(const char *format, ...)
 					handle_o(args, &count);
 					break;
 				default:
-					putchar('%');
-					putchar(*format);
+					write(1, "%", 1);
+					write(1, format, 1);
 					count += 2;
 					break;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			write(1, format, 1);
 			count++;
 		}
 		format++;
