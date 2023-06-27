@@ -23,5 +23,7 @@ void reverse_str(const char *str, int *count);
 int handle_x(va_list args, int *count);
 int handle_X(va_list args, int *count);
 int handle_o(va_list args, int *count);
+int handle_p(va_list args, int *count);
+void print_hex(int digit, int *count);
 
 #endif

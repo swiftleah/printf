@@ -1,5 +1,7 @@
 #include "main.h"
 int handle_X(va_list args, int *count);
+int handle_p(va_list args, int *count);
+void print_hex(int digit, int *count);
 
 /**
  * handle_x - handles conversion specifier 'x'
@@ -111,4 +113,67 @@ int handle_X(va_list args, int *count)
 	}
 	return (*count);
 }
+/**
+ * print_hex - prints hexadecimal version of int
+ * @digit: digit
+ * @count: number of characters printed
+ *
+ * Return: nothing
+ */
 
+void print_hex(int digit, int *count)
+{
+	if (digit < 10)
+	{
+		char c = '0' + digit;
+		write(1, &c, 1);
+		(*count)++;
+	}
+	else
+	{
+		char c = 'a' + (digit - 10);
+		write(1, &c, 1);
+		(*count)++;
+	}
+}
+
+/**
+ * handle_p - handles conversion specifier 'p'
+ * @args: arguments
+ * @count: number of characters printed
+ *
+ * Return: count
+ */
+
+int handle_p(va_list args, int *count)
+{
+	void *ptr = va_arg(args, void *);
+	unsigned int value = (unsigned int)ptr;
+	int i = 0;
+	int remaining;
+	char buffer[20];
+
+	while (value != 0)
+	{
+		remaining = value % 16;
+		buffer[i] = remaining;
+		value/= 16;
+		i++;
+	}
+
+	if (i == 0)
+	{
+		write(1, "0", 1);
+		(*count)++;
+	}
+	else
+	{
+		while (i > 0)
+		{
+			i--;
+			print_hex(buffer[i], count);
+		}
+	}
+	return (*count);
+}
+}
