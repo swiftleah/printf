@@ -12,7 +12,8 @@ int handle_x(va_list args, int *count)
 {
 	unsigned int n = va_arg(args, unsigned int);
 	int digits = 0;
-	int remainder, j, i, temp;
+	int remainder, j, i;
+	unsigned int temp;
 	char *buffer;
 
 	if (args == NULL)
@@ -21,7 +22,7 @@ int handle_x(va_list args, int *count)
 	}
 	if (n == 0)
 	{
-		putchar('0');
+		write(1, "0", 1);
 		(*count)++;
 		return (*count);
 	}
@@ -51,10 +52,9 @@ int handle_x(va_list args, int *count)
 
 	for (j = 0; j < digits; j++)
 	{
-		putchar(buffer[j]);
+		write(1, &buffer[j], 1);
 		(*count)++;
 	}
-	free(buffer);
 	return (*count);
 }
 
