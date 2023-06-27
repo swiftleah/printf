@@ -1,5 +1,11 @@
 #include "main.h"
-
+/**
+ * handle_b - handles conversion specifier 'b'
+ * @args: arguments
+ * @count: number of characters printed
+ *
+ * Return: count
+ */
 int handle_b(va_list args, int *count)
 {
 	unsigned int n = va_arg(args, unsigned int);

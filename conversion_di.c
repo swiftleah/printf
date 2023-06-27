@@ -51,3 +51,4 @@ int handle_d(va_list args, int *count)
 	}
 	return (*count);
 }
+

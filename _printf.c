@@ -53,6 +53,9 @@ int _printf(const char *format, ...)
 				case 'o':
 					handle_o(args, &count);
 					break;
+				case 'u':
+					handle_u(args, &count);
+					break;
 				default:
 					write(1, "%", 1);
 					write(1, format, 1);
