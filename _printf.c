@@ -50,6 +50,9 @@ int _printf(const char *format, ...)
 				case 'X':
 					handle_X(args, &count);
 					break;
+				case 'o':
+					handle_o(args, &count);
+					break;
 				default:
 					putchar('%');
 					putchar(*format);
