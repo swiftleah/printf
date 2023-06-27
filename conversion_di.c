@@ -9,6 +9,7 @@ int handle_d(va_list args, int *count)
 {
 	int num = va_arg(args, int);
 	int temp, digit, mult = 1, digits = 0;
+	char c;
 
 	if (args == NULL)
 	{
@@ -16,14 +17,14 @@ int handle_d(va_list args, int *count)
 	}
 	if (num == 0)
 	{
-		putchar('0');
+		write(1, "0", 1);
 		(*count)++;
 		return (1);
 	}
 	temp = num;
 	if (num < 0)
 	{
-		putchar('-');
+		write(1, "-", 1);
 		(*count)++;
 		num = -num;
 		temp = -temp;
@@ -42,7 +43,8 @@ int handle_d(va_list args, int *count)
 	while (mult > 0)
 	{
 		digit = num / mult;
-		putchar('0' + digit);
+		c = '0' + digit;
+		write(1, &c, 1);
 		(*count)++;
 		num %= mult;
 		mult /= 10;

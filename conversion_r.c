@@ -20,7 +20,7 @@ void reverse_str(const char *str, int *count)
 
 	for (i = len - 1; i >= 0; i--)
 	{
-		putchar(str[i]);
+		write(1, &str[i], 1);
 		(*count)++;
 	}
 }

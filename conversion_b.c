@@ -5,6 +5,7 @@ int handle_b(va_list args, int *count)
 	unsigned int n = va_arg(args, unsigned int);
 	int bit, mult, digits = 0;
 	unsigned int temp;
+	unsigned char c;
 
 	if (args == NULL)
 	{
@@ -12,7 +13,7 @@ int handle_b(va_list args, int *count)
 	}
 	if (n == 0)
 	{
-		putchar('0');
+		write(1, "0", 1);
 		(*count)++;
 		return (1);
 	}
@@ -32,7 +33,8 @@ int handle_b(va_list args, int *count)
 	while (mult > 0)
 	{
 		bit = (n & mult) ? 1 : 0;
-		putchar('0' + bit);
+		c = '0' + bit;
+		write(1, &c, 1);
 		(*count)++;
 		mult >>= 1;
 	}

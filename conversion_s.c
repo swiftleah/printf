@@ -19,7 +19,7 @@ void handle_s(va_list args, int *count)
 	str = va_arg(args, char *);
 		while (str[j] != '\0')
 		{
-			putchar(str[j]);
+			write(1, &str[j], 1);
 			j++;
 			(*count)++;
 		}

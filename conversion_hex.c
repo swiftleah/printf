@@ -76,7 +76,7 @@ int handle_X(va_list args, int *count)
 
 	if (n == 0)
 	{
-		putchar('0');
+		write(1, "0", 1);
 		(*count)++;
 		return (*count);
 	}
@@ -106,7 +106,7 @@ int handle_X(va_list args, int *count)
 	}
 	for (j = 0; j < digits; j++)
 	{
-		putchar(buffer[j]);
+		write(1, &buffer[j], 1);
 		(*count)++;
 	}
 	free(buffer);
