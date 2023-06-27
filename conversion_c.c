@@ -19,3 +19,4 @@ void handle_c(va_list args, int *count)
 	write(1, &c, 1);
 	(*count)++;
 }
+

@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -22,10 +20,6 @@ int handle_p(va_list args, int *count) {
     }
 }
 
-/**
- *
- *
- */
 int main() 
 {
     int result = register_printf_function('p', handle_p);
